@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.usst.jayce.printer.Printer;
-import edu.usst.jayce.server.ctl.KiftdCtl;
+import edu.usst.jayce.server.ctl.SystemCtl;
 import edu.usst.jayce.server.enumeration.LogLevel;
 import edu.usst.jayce.server.enumeration.VCLevel;
 import edu.usst.jayce.server.pojo.ExtendStores;
@@ -26,7 +26,7 @@ public class UIRunner {
 	private UIRunner() throws Exception {
 		Printer.init(true);
 		final ServerUIModule ui = ServerUIModule.getInsatnce();
-		KiftdCtl ctl = new KiftdCtl();// 服务器控制层，用于连接UI与服务器内核
+		SystemCtl ctl = new SystemCtl();// 服务器控制层，用于连接UI与服务器内核
 		ServerUIModule.setStartServer(() -> ctl.start());
 		ServerUIModule.setOnCloseServer(() -> ctl.stop());
 		ServerUIModule.setGetServerTime(() -> ServerTimeUtil.getServerTime());
