@@ -62,11 +62,8 @@ public class PowerPoint2PDFUtil {
 				for (int k = 0; k < truns.length; k++) {
 					RichTextRun[] rtruns = truns[k].getRichTextRuns();
 					for (int l = 0; l < rtruns.length; l++) {
-						if(Arrays.asList(GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames()).contains(rtruns[l].getFontName())) {
-							continue;
-						}
 						rtruns[l].setFontIndex(1);
-						rtruns[l].setFontName("WenQuanYi Zen Hei");
+						rtruns[l].setFontName("宋体");
 					}
 				}
 
@@ -99,11 +96,7 @@ public class PowerPoint2PDFUtil {
 						for (XSLFTextParagraph textPara : txtshape.getTextParagraphs()) {
 							List<XSLFTextRun> textRunList = textPara.getTextRuns();
 							for (XSLFTextRun textRun : textRunList) {
-								if (Arrays.stream(ge.getAvailableFontFamilyNames()).parallel()
-										.anyMatch((e) -> e.equals(textRun.getFontFamily()))) {
-									continue;
-								}
-								textRun.setFontFamily("WenQuanYi Zen Hei");
+								textRun.setFontFamily("宋体");
 							}
 						}
 					}
