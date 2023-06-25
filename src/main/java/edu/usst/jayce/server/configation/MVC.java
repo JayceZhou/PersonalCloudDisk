@@ -61,9 +61,4 @@ public class MVC extends ResourceHttpRequestHandler implements WebMvcConfigurer 
 		return new GsonBuilder().create();
 	}
 
-	// 注册WebDAV处理Servlet
-//	@Bean
-//	public ServletRegistrationBean<Servlet> WebDAVServlet() {
-//		return new ServletRegistrationBean<Servlet>(new KiftdWebDAVServlet(), "/dav/*");
-//	}
 }
