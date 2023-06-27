@@ -71,7 +71,7 @@ public class RangeFileStreamWriter {
 			response.setStatus(status);// 412
 			return status;
 		}
-		// 设置请求头，基于kiftd文件系统推荐使用application/octet-stream
+		// 设置请求头，基于文件系统推荐使用application/octet-stream
 		response.setContentType(contentType);
 		// 设置文件信息
 		response.setCharacterEncoding("UTF-8");

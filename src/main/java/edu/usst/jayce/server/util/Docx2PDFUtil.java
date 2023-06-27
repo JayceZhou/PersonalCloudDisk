@@ -34,5 +34,4 @@ public class Docx2PDFUtil {
 		}
 		PdfConverter.getInstance().convert(document, out, PdfOptions.create().fontProvider(Docx2PDFFontProvider.getInstance()));
 	}
-
 }
